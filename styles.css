@@ -1,0 +1,528 @@
+/* CSS Variables for Light / Dark Theme */
+:root {
+    /* DEFAULT DARK THEME (Techy ML Vibe) */
+    --bg-main: #09090b;
+    --bg-panel: rgba(20, 20, 25, 0.6);
+    --text-primary: #f8fafc;
+    --text-secondary: #a1a1aa;
+    --accent: #d946ef;
+    /* Cyberpunk Fuchsia/Violet */
+    --accent-hover: #c026d3;
+    --border-color: rgba(217, 70, 239, 0.25);
+    --border-color-hover: rgba(217, 70, 239, 0.7);
+    --gradient-glow: drop-shadow(0 0 10px rgba(217, 70, 239, 0.6));
+    --terminal-header: #18181b;
+}
+
+[data-theme="light"] {
+    /* LIGHT THEME */
+    --bg-main: #fdfdfd;
+    --bg-panel: rgba(255, 255, 255, 0.8);
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --accent: #9333ea;
+    /* Deep Purple */
+    --accent-hover: #7e22ce;
+    --border-color: rgba(147, 51, 234, 0.25);
+    --border-color-hover: rgba(147, 51, 234, 0.7);
+    --gradient-glow: none;
+    --terminal-header: #f4f4f5;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
+    /* Explicit dot-matrix background */
+    background-image: radial-gradient(var(--border-color) 2px, transparent 2px);
+    background-size: 35px 35px;
+    background-position: 0 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+.prompt,
+.tag,
+.sys-msg {
+    font-family: 'Fira Code', monospace;
+}
+
+.glow-text {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--border-color-hover);
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="light"] .glow-text {
+    text-shadow: none;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title span {
+    color: var(--accent);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Glassmorphism Panels & Hover Glow */
+.glass-panel {
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.glow-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+    border-color: var(--border-color-hover);
+    box-shadow: 0 0 20px var(--border-color);
+    transform: translateY(-3px);
+}
+
+[data-theme="light"] .glow-hover:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+/* Hamburger Menu and Navigation */
+#hamburger-btn {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* Square with rounded corners looks more techy */
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    z-index: 1001;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+#hamburger-btn:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--border-color);
+}
+
+#nav-menu {
+    position: fixed;
+    top: 5rem;
+    left: 1.5rem;
+    width: 250px;
+    z-index: 1000;
+    transform: translateX(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 1.5rem;
+}
+
+#nav-menu.open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+#nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.1rem;
+    transition: color 0.2s, padding-left 0.2s;
+    display: block;
+}
+
+#nav-menu a:hover {
+    color: var(--accent);
+    padding-left: 10px;
+}
+
+/* Hero Modal (Terminal Style) */
+.hero {
+    padding: 0;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.terminal-header {
+    background: var(--terminal-header);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.terminal-header .title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.terminal-body {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.prompt {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bio {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+.tag {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .tag {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Projects Grid */
+.grid {
+    display: grid;
+    /* This creates a responsive grid that will naturally form 3 columns on wide screens (since 1200px / 3 is roughly 400px, we set min size slightly smaller) */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-color-hover);
+    box-shadow: 0 0 20px var(--border-color);
+}
+
+[data-theme="light"] .card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.card-desc {
+    color: var(--text-secondary);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag.sm {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+}
+
+.link {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    margin-left: auto;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Publications List */
+.list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.list-item {
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-color-hover);
+    box-shadow: 0 0 20px var(--border-color);
+}
+
+[data-theme="light"] .list-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.item-header h3 {
+    font-size: 1.2rem;
+}
+
+.item-header .date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.list-item p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+
+/* Split Section */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.terminal-list {
+    list-style: none;
+    padding: 1.5rem;
+}
+
+.terminal-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.terminal-list li:last-child {
+    margin-bottom: 0;
+}
+
+.bullet {
+    font-size: 1.2rem;
+}
+
+/* Socials */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+
+
+.sys-msg {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing effect cursor */
+.cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.1em;
+    background-color: var(--accent);
+    vertical-align: text-bottom;
+    margin-bottom: 0.1em;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .glow-text {
+        font-size: 2.2rem;
+    }
+
+    .terminal-body {
+        padding: 1.5rem;
+    }
+
+    .item-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}

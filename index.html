@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Sardar</title>
+
+    <!-- Importing Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Hamburger Menu Button -->
+    <button id="hamburger-btn" aria-label="Toggle Navigation Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Navigation Menu (Hidden by default) -->
+    <nav id="nav-menu" class="glass-panel">
+        <ul>
+            <li><a href="#" class="nav-link" data-target="top">~/about_me</a></li>
+            <li><a href="#projects" class="nav-link">_projects</a></li>
+            <li><a href="#publications" class="nav-link">_publications</a></li>
+            <li><a href="#achievements" class="nav-link">_achievements</a></li>
+            <li><a href="#certifications" class="nav-link">_certifications</a></li>
+            <li><a href="#socials" class="nav-link">_contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <div class="container">
+
+        <!-- HEADER / ABOUT ME -->
+        <header class="hero section glass-panel glow-hover">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="title">~/about_me.sh</span>
+            </div>
+            <div class="terminal-body">
+                <p class="prompt">&gt; whoami</p>
+                <!-- NAME AND SHORT BIO HERE -->
+                <h1 class="glow-text">Rohan Sardar</h1>
+                <h2 class="subtitle">Aspiring Data Scientist & ML Engineer</h2>
+                <p class="bio">
+                    Designing and building end-to-end AI systems, with core expertise spanning predictive analytics, Computer Vision, NLP, and advanced generative models like LLMs and VLMs.
+                </p>
+                <div class="tech-stack">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">R</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Hugging Face</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Agent Development Kit (ADK)</span>
+                    <span class="tag">Google Cloud</span>
+                    <span class="tag">PySpark</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- PROJECTS -->
+        <section class="projects section" id="projects">
+            <h2 class="section-title"><span>&gt;</span> _projects</h2>
+            <div class="grid">
+
+                <!-- PROJECT 1 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">Custom Asynchronous RAG System</h3>
+                    <p class="card-desc">Built a custom RAG pipeline from scratch including ingestion, chunking, vector DB and integrating local FlashRank reranking to maximize retrieval accuracy without added API costs. Engineered a non-blocking architecture with isolated FAISS stores and sliding-window memory for resilient, long-running conversational queries. </p>
+                    <div class="card-footer">
+                        <span class="tag sm">FAISS</span>
+                        <span class="tag sm">FlashRank</span>
+                        <span class="tag sm">asyncio</span>
+                        <a href="https://github.com/RohanSardar/RAG" target="_blank" class="link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">Transformer Architecture from Scratch</h3>
+                    <p class="card-desc">Engineered a sequence-to-sequence Transformer architecture from scratch, including custom encoder, decoder, and attention mechanisms, based on the original "Attention Is All You Need" paper. Built an end-to-end training and evaluation pipeline for automated translation on a custom English-Bengali dataset.</p>
+                    <div class="card-footer">
+                        <span class="tag sm">PyTorch</span>
+                        <a href="https://github.com/RohanSardar/TransformerArchitecture" target="_blank"
+                            class="link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">Multimodal Semantic Image Search</h3>
+                    <p class="card-desc">Developed a high-performance search engine utilizing OpenAI CLIP and Qdrant vector database for both natural language and image-based retrieval. Leveraged high-dimensional vector embeddings to bypass traditional keyword search, accurately matching images based on contextual meaning.</p>
+                    <div class="card-footer">
+                        <span class="tag sm">OpenAI CLIP</span>
+                        <span class="tag sm">Qdrant</span>
+                        <span class="tag sm">PyTorch</span>
+                        <span class="tag sm">FastAPI</span>
+                        <a href="https://github.com/RohanSardar/SemanticImageSimilarity" target="_blank"
+                            class="link">View Code &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">Multi-Label Toxic Comment Classifier</h3>
+                    <p class="card-desc"> Developed a real-time, multi-label text classification REST API utilizing custom regex preprocessing and TF-IDF vectorization to detect toxic language. Trained and tuned balanced Logistic Regression models on the Jigsaw dataset, fully containerizing the modular application for scalable deployment.</p>
+                    <div class="card-footer">
+                        <span class="tag sm">Scikit-learn</span>
+                        <span class="tag sm">FastAPI</span>
+                        <span class="tag sm">Pydantic</span>
+                        <span class="tag sm">Docker</span>
+                        <a href="https://github.com/RohanSardar/SpeechFlowGuard" target="_blank" class="link">View Code
+                            &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">BERT Similarity Search</h3>
+                    <p class="card-desc"> Developed dual Streamlit applications within a single repository to perform semantic word searches using BERT embeddings, allowing users to visualize semantic relationships through either word clouds or interactive network graphs.</p>
+                    <div class="card-footer">
+                        <span class="tag sm">PyTorch</span>
+                        <span class="tag sm">HuggingFace</span>
+                        <span class="tag sm">Streamlit</span>
+                        <span class="tag sm">NetworkX</span>
+                        <span class="tag sm">Plotly</span>
+                        <a href="https://github.com/RohanSardar/bert_similarity_search" target="_blank"
+                            class="link">View Code
+                            &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 6 -->
+                <div class="card glass-panel tech-border">
+                    <h3 class="card-title">Class Activation Mapping (CAM) using ResNet18</h3>
+                    <p class="card-desc"> Class Activation Maps (CAM) provide a way to identify which regions of an input image contribute most to a convolutional neural network’s decision for a specific class. CAMs highlight the spatial locations in the feature maps that are most influential for predicting class, allowing an interpretable visualization of the model’s attention. Implemented this feature for pretrained ResNet18 weights to visualize how this model actually predicts.</p>
+                    <div class="card-footer">
+                        <span class="tag sm">OpenCV</span>
+                        <span class="tag sm">PyTorch</span>
+                        <span class="tag sm">NumPy</span>
+                        <a href="https://github.com/RohanSardar/CNNexplainability/blob/main/class_activation_mapping.ipynb" target="_blank"
+                            class="link">View Code
+                            &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section class="publications section" id="publications">
+            <h2 class="section-title"><span>&gt;</span> _publications</h2>
+            <div class="list-section glass-panel">
+
+                <!-- PUBLICATION 1 -->
+                <div class="list-item">
+                    <div class="item-header">
+                        <h3>Visualizing ResNet18 Attention with Class Activation Mapping (CAM) in PyTorch</h3>
+                        <span class="date">Dec 2025</span>
+                    </div>
+                    <p>Class Activation Maps (CAM) provide a way to identify which regions of an input image contribute
+                        most to a convolutional neural network’s decision for a specific class. CAMs highlight the
+                        spatial locations in the feature maps that are most influential for predicting class c, allowing
+                        an interpretable visualization of the model’s attention.</p>
+                    <a href="https://rohan-sardar.medium.com/visualizing-resnet18-attention-with-class-activation-mapping-cam-in-pytorch-5c0b56d3f246"
+                        target="_blank" class="link">Read Article</a>
+                </div>
+
+                <!-- PUBLICATION 2 -->
+                <div class="list-item">
+                    <div class="item-header">
+                        <h3>Visualizing BERT Word Embeddings with NetworkX and Plotly using PyTorch</h3>
+                        <span class="date">Dec 2025</span>
+                    </div>
+                    <p>Build an interactive tool to explore the semantic connections inside a BERT model.</p>
+                    <a href="https://rohan-sardar.medium.com/visualizing-bert-word-embeddings-with-networkx-and-plotly-using-pytorch-84dff2a20636"
+                        target="_blank" class="link">Read Article</a>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="split-section">
+            <!-- ACHIEVEMENTS -->
+            <section class="achievements section id" id="achievements">
+                <h2 class="section-title"><span>&gt;</span> _achievements</h2>
+                <ul class="terminal-list glass-panel glow-hover">
+                    <!-- YOUR ACHIEVEMENTS HERE -->
+                    <li><span class="bullet">⭐</span> Kaggle Notebook Expert</li>
+                    <li><span class="bullet">🏆</span> Rank top 1% in Kaggle Notebooks</li>
+                </ul>
+            </section>
+
+            <!-- CERTIFICATIONS (Optional) -->
+            <section class="certifications section" id="certifications">
+                <h2 class="section-title"><span>&gt;</span> _certifications</h2>
+                <ul class="terminal-list glass-panel glow-hover">
+                    <!-- YOUR CERTIFICATIONS HERE -->
+                    <li><span class="bullet">📜</span> Oracle Cloud Infrastructure 2024 Generative AI Certified
+                        Professional</li>
+                    <li><span class="bullet">📜</span> Fundamentals of Accelerated Computing with CUDA Python from
+                        NVIDIA</li>
+                    <li><span class="bullet">📜</span> 5-Day AI Agents Intensive Course with Google from Kaggle </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- SOCIALS & FOOTER -->
+        <footer class="socials section" id="socials">
+            <h2 class="section-title"><span>&gt;</span> _contact</h2>
+            <div class="social-links">
+                <!-- PROFILE LINKS HERE -->
+                <a href="https://github.com/RohanSardar" target="_blank" class="social-btn glass-panel">GitHub</a>
+                <a href="https://linkedin.com/in/rohan-sardar" target="_blank" class="social-btn glass-panel">LinkedIn</a>
+                <a href="https://www.kaggle.com/rohansardar" target="_blank" class="social-btn glass-panel">Kaggle</a>
+                <a href="https://medium.com/@rohan-sardar" target="_blank" class="social-btn glass-panel">Medium</a>
+                <a href="https://x.com/_rohansardar" target="_blank" class="social-btn glass-panel">X</a>
+            </div>
+            <div class="sys-msg">
+                <p>System exit code 0. Have a nice day.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
