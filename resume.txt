@@ -1,0 +1,134 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[margin=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% No indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% Fix list spacing (removes big gaps)
+\setlist[itemize]{
+    itemsep=3pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt,
+    leftmargin=*
+}
+
+% Section format: line ABOVE, title centered BELOW
+\titleformat{\section}
+  {\bfseries\small\centering}
+  {}
+  {0em}
+  {}
+  [\vspace{2pt}]
+
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+%------------------------
+% Header
+%------------------------
+{\LARGE \textbf{ROHAN SARDAR}} \\
+
+
+LinkedIn: \href{https://linkedin.com/in/rohansardar}{linkedin.com/in/rohansardar} \;\textbar\; GitHub: \href{https://github.com/RohanSardar}{github.com/RohanSardar} \;\textbar\; Kaggle: \href{https://kaggle.com/rohansardar}{kaggle.com/rohansardar} \\
+
+
+\vspace{4pt}
+\hrule
+
+%------------------------
+\section*{EDUCATION}
+
+\textbf{Techno India University, Kolkata} \\
+Bachelor of Technology in Computer Science Engineering with specialization in AI \& ML\\
+Aug 2023 -- Aug 2027 \;\textbar\; SGPA: 9.1 \;\textbar\; CGPA: 8.9
+
+\vspace{4pt}
+\hrule
+
+%------------------------
+\section*{SKILLS}
+
+\begin{itemize}
+
+\item \textbf{Languages:} Python, C/C++, SQL
+
+\item \textbf{Machine Learning \& AI:} PyTorch, Scikit-Learn, Transformers, XGBoost, NLTK
+
+\item \textbf{Data Engineering \& Analytics:} NumPy, Pandas, Matplotlib, SciPy, PySpark, MySQL
+
+\item \textbf{LLM \& Backend Systems:} LangChain, LangGraph, FastAPI, FAISS, ChromaDB
+
+\item \textbf{Tools \& Platforms:} Docker, Git, Linux, Google Cloud
+
+\end{itemize}
+
+\vspace{4pt}
+\hrule
+
+%------------------------
+\section*{EXPERIENCE}
+
+\begin{itemize}
+    \item \textbf{AI Benchmarking Contributor \;\textbar\; Shipd} \\
+    Mar 2026 -- Present \\
+    Built and optimized solutions for ML benchmarking tasks involving tabular learning, NLP, RAG, forecasting, and prompt engineering to surpass baseline AI agent performance.
+    \item \textbf{Technical Content Writer Intern\;\textbar\; GeeksforGeeks} \\
+    Aug 2024 -- Sep 2024 \\ Published technical articles on their official website.
+\end{itemize}
+
+
+\vspace{4pt}
+\hrule
+
+%------------------------
+\section*{PROJECTS}
+
+\begin{itemize}
+
+\item \textbf{Finance Verifier Agent \;\textbar\; \href{https://github.com/RohanSardar/finance_verifier_agent.git}{LINK}} \\
+Built a multi-agent financial analysis system using LangGraph and Gemini 2.5 Flash to verify financial claims, fetch stock data, and generate structured analyst reports. Implemented real-time streaming with FastAPI WebSockets and dynamic PDF generation for browser-based report downloads. Achieved 88.9\% routing accuracy and 77.8\% tool execution accuracy with an average system latency of 8.56s. \\
+\textbf{Tech:} Python, LangGraph, LangChain, FastAPI, Gemini API, yfinance, Tavily API
+
+\item \textbf{Custom Asynchronous RAG System \;\textbar\; \href{https://github.com/RohanSardar/RAG}{LINK}} \\
+Developed a custom RAG pipeline with document ingestion, chunking, FAISS-based retrieval, and local FlashRank reranking to improve retrieval quality without additional API costs. Designed an asynchronous architecture with isolated vector stores and conversational memory for long-running queries. \\
+\textbf{Tech:} Python, FAISS, FlashRank, Streamlit, Docker, asyncio
+
+\item \textbf{Transformer Architecture from Scratch \;\textbar\; \href{https://github.com/RohanSardar/TransformerArchitecture}{LINK}} \\
+Implemented a sequence-to-sequence Transformer architecture from scratch based on the “Attention Is All You Need” paper, including custom encoder, decoder, and attention mechanisms. Built an end-to-end training pipeline for English-Bengali machine translation. \\
+\textbf{Tech:} Python, PyTorch
+
+\item \textbf{Multimodal Semantic Image Search \;\textbar\; \href{https://github.com/RohanSardar/SemanticImageSimilarity}{LINK}} \\
+Developed a semantic image search engine using OpenAI CLIP embeddings and Qdrant vector database for text-to-image and image-to-image retrieval. Built scalable retrieval APIs and interactive search workflows for contextual similarity matching. \\
+\textbf{Tech:} Python, PyTorch, OpenAI CLIP, Qdrant, FastAPI, Docker
+
+\item \textbf{Multi-Label Toxic Comment Classifier \;\textbar\; \href{https://github.com/RohanSardar/SpeechFlowGuard}{LINK}} \\
+Built a real-time multi-label toxicity detection API using TF-IDF vectorization and Logistic Regression models trained on the Jigsaw dataset. Containerized the modular inference pipeline for scalable deployment. \\
+\textbf{Tech:} Python, Scikit-learn, FastAPI, Docker
+
+\end{itemize}
+
+\vspace{4pt}
+\hrule
+
+%------------------------
+\section*{CERTIFICATIONS}
+
+\begin{itemize}
+    \item \textbf{Oracle Cloud Infrastructure 2024 Generative AI Certified Professional \;\textbar\; Oracle} \;\textbar\; \href{https://catalog-education.oracle.com/ords/certview/sharebadge?id=D9B2CA779E2BBE07DB2CBACE34A488391B81999325D0B74A0BFFF52BCE5F6842}{LINK}
+
+    \item \textbf{Fundamentals of Accelerated Computing with CUDA Python \;\textbar\; NVIDIA} \;\textbar\; \href{https://learn.nvidia.com/certificates?id=FWMwh7RQSWumlZbwCLZkZw}{LINK}
+
+    \item \textbf{Data Science Math Skills  \;\textbar\; Coursera}  \;\textbar\; \href{https://www.coursera.org/account/accomplishments/verify/NENL7SAUW2E6}{LINK}
+\end{itemize}
+
+\vspace{4pt}
+\end{document}
